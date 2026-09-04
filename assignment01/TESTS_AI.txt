@@ -1,0 +1,199 @@
+12 test cases for the MSCS Artificial Intelligence track (choice = 2).
+Each list already satisfies the base MSCS requirements (CS551, CS571, CS575,
+CS550, CS595/CS599, and enough non-AI electives), so only the AI-track logic
+(CS536 + CS565 required, plus 2 electives from elecsAI.txt) is being isolated,
+except for test 11, which intentionally breaks the base MSCS requirement too.
+
+----------------------------------
+TEST CASES FOR OPTION 2 (AI TRACK)
+
+1. (project route, 2 AI electives) - PASS
+cs 551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs565, cs515, cs580P
+
+2. (thesis route, 2 different AI electives) - PASS
+cs551, cs571, cs575, cs550, cs599, cs544, cs557, cs560, cs561, cs572, cs536, cs565, cs518, cs581A
+
+3. (3 AI electives, extra elective is fine) - PASS
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs565, cs515, cs580P, cs524
+
+4. (CS515 repeated, CS580P once -> still 2 distinct electives) - PASS
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs565, cs515, cs515, cs580P
+
+5. (CS515 repeated, no other elective -> only 1 distinct) - FAIL, not enough electives
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs565, cs515, cs515
+
+6. (missing CS536) - FAIL
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs565, cs515, cs580P
+
+7. (missing CS565) - FAIL
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs515, cs580P
+
+8. (missing both CS536 and CS565) - FAIL, both messages
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs515, cs580P
+
+9. (only 1 AI elective) - FAIL, not enough electives
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs565, cs515
+
+10. (0 AI electives) - FAIL, not enough electives
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs565
+
+11. (base MSCS fails - missing CS551 - AND AI track fails - missing CS565, <2 electives)
+    FAIL, messages from BOTH MSCSChecker and MSCSAIChecker (tests they run independently)
+cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs515
+
+12. (mixed case / extra whitespace, robustness check) - PASS
+CS 551, Cs571,  cs 575,cs550,CS595,cs544,cs557,cs560,cs561,cs572,cs576, CS 536,cs 565,cs515,cs580p
+
+CONSOLE OUTPUT:
+Select checker
+	1. MSCS only
+	2. MSCS AI track
+	3. MSCS Cybersecurity track
+2
+Paste in the comma-separated list of courses that were passed
+cs 551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs565, cs515, cs580P
+The courses taken meet the course distribution requirements.
+GPA, graduate residence, project or thesis completion must all be checked separately.
+4+1 completion must also be checked separately
+--------------------------------
+Do you want another test (Y/N)?
+Y
+Select checker
+	1. MSCS only
+	2. MSCS AI track
+	3. MSCS Cybersecurity track
+2
+Paste in the comma-separated list of courses that were passed
+cs551, cs571, cs575, cs550, cs599, cs544, cs557, cs560, cs561, cs572, cs536, cs565, cs518, cs581A
+The courses taken meet the course distribution requirements.
+GPA, graduate residence, project or thesis completion must all be checked separately.
+4+1 completion must also be checked separately
+--------------------------------
+Do you want another test (Y/N)?
+Y
+Select checker
+	1. MSCS only
+	2. MSCS AI track
+	3. MSCS Cybersecurity track
+2
+Paste in the comma-separated list of courses that were passed
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs565, cs515, cs580P, cs524
+The courses taken meet the course distribution requirements.
+GPA, graduate residence, project or thesis completion must all be checked separately.
+4+1 completion must also be checked separately
+--------------------------------
+Do you want another test (Y/N)?
+Y
+Select checker
+	1. MSCS only
+	2. MSCS AI track
+	3. MSCS Cybersecurity track
+2
+Paste in the comma-separated list of courses that were passed
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs565, cs515, cs515, cs580P
+The courses taken meet the course distribution requirements.
+GPA, graduate residence, project or thesis completion must all be checked separately.
+4+1 completion must also be checked separately
+--------------------------------
+Do you want another test (Y/N)?
+Y
+Select checker
+	1. MSCS only
+	2. MSCS AI track
+	3. MSCS Cybersecurity track
+2
+Paste in the comma-separated list of courses that were passed
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs565, cs515, cs515
+The AI track list is missing enough AI electives. Two AI track electives are needed.
+Please read the messages above.
+--------------------------------
+Do you want another test (Y/N)?
+Y
+Select checker
+	1. MSCS only
+	2. MSCS AI track
+	3. MSCS Cybersecurity track
+2
+Paste in the comma-separated list of courses that were passed
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs565, cs515, cs580P
+The AI track list is missing CS 536.
+Please read the messages above.
+--------------------------------
+Do you want another test (Y/N)?
+Y
+Select checker
+	1. MSCS only
+	2. MSCS AI track
+	3. MSCS Cybersecurity track
+2
+Paste in the comma-separated list of courses that were passed
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs515, cs580P
+The AI track list is missing CS 565.
+Please read the messages above.
+--------------------------------
+Do you want another test (Y/N)?
+Y
+Select checker
+	1. MSCS only
+	2. MSCS AI track
+	3. MSCS Cybersecurity track
+2
+Paste in the comma-separated list of courses that were passed
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs515, cs580P
+The AI track list is missing CS 536.
+The AI track list is missing CS 565.
+Please read the messages above.
+--------------------------------
+Do you want another test (Y/N)?
+Y
+Select checker
+	1. MSCS only
+	2. MSCS AI track
+	3. MSCS Cybersecurity track
+2
+Paste in the comma-separated list of courses that were passed
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs565, cs515
+The AI track list is missing enough AI electives. Two AI track electives are needed.
+Please read the messages above.
+--------------------------------
+Do you want another test (Y/N)?
+Y
+Select checker
+	1. MSCS only
+	2. MSCS AI track
+	3. MSCS Cybersecurity track
+2
+Paste in the comma-separated list of courses that were passed
+cs551, cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs565
+The AI track list is missing enough AI electives. Two AI track electives are needed.
+Please read the messages above.
+--------------------------------
+Do you want another test (Y/N)?
+Y
+Select checker
+	1. MSCS only
+	2. MSCS AI track
+	3. MSCS Cybersecurity track
+2
+Paste in the comma-separated list of courses that were passed
+cs571, cs575, cs550, cs595, cs544, cs557, cs560, cs561, cs572, cs576, cs536, cs515
+The list is missing CS 551.
+The AI track list is missing CS 565.
+The AI track list is missing enough AI electives. Two AI track electives are needed.
+Please read the messages above.
+--------------------------------
+Do you want another test (Y/N)?
+Y
+Select checker
+	1. MSCS only
+	2. MSCS AI track
+	3. MSCS Cybersecurity track
+2
+Paste in the comma-separated list of courses that were passed
+CS 551, Cs571,  cs 575,cs550,CS595,cs544,cs557,cs560,cs561,cs572,cs576, CS 536,cs 565,cs515,cs580p
+The courses taken meet the course distribution requirements.
+GPA, graduate residence, project or thesis completion must all be checked separately.
+4+1 completion must also be checked separately
+--------------------------------
+Do you want another test (Y/N)?
+N
